@@ -36,15 +36,13 @@ const Game: React.FC<GameProps> = ({
   const winningLine = result?.line;
 
   useEffect(() => {
-    // Only set historyVisible to false if we're on the first move
     if (currentMove === 0) {
       setHistoryVisible(false);
     }
-  }, [currentMove, setHistoryVisible]); // Re-run this effect when `currentMove` changes
+  }, [currentMove, setHistoryVisible]);
 
-  // Handle a move (play action)
   const handlePlay = (
-    nextSquares: Player[], // Updated to Player[]
+    nextSquares: Player[],
     currentPosition: [number, number]
   ) => {
     const nextHistory = [
@@ -52,17 +50,16 @@ const Game: React.FC<GameProps> = ({
       {
         squares: nextSquares,
         currentPosition,
-        player: currentPlayer, // Type assertion here
+        player: currentPlayer,
       },
     ];
     setHistory(nextHistory);
     setCurrentMove(nextHistory.length - 1);
     if (!result?.winner) {
-      setCurrentPlayer(currentPlayer === "X" ? "O" : "X"); // Switch the player
+      setCurrentPlayer(currentPlayer === "X" ? "O" : "X");
     }
   };
 
-  // Undo the last move or restart the game
   const handleUndo = () => {
     if (result || currentMove === 0) {
       restartGame();
@@ -72,22 +69,20 @@ const Game: React.FC<GameProps> = ({
     if (currentMove > 0) {
       setHistory(history.slice(0, -1));
       setCurrentMove(currentMove - 1);
-      setCurrentPlayer(currentPlayer == "X" ? "O" : "X"); // Switch the player
+      setCurrentPlayer(currentPlayer == "X" ? "O" : "X");
     }
   };
 
-  // Restart the game
   const restartGame = () => {
     setHistory([
       { squares: Array(9).fill(null), currentPosition: null, player: null },
     ]);
     setCurrentMove(0);
-    setHasStarted(false); // Reset the game state
+    setHasStarted(false);
   };
 
   return (
-    <div className="main container">
-      <h1 className="main-title">Tic-Tac-Toe</h1>
+    <div className="container">
       <div className="game container">
         <Status result={result} currentPlayer={currentPlayer} />
         <div className="board-sec container col">

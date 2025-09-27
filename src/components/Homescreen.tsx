@@ -11,13 +11,10 @@ const Homescreen: React.FC<HomescreenProps> = ({
   handleHistoryVisibility,
 }) => {
   const handlePlayerSelection = (player: Player) => {
-    console.log(player);
-
     startGame(player);
   };
   return (
     <div className="start container">
-      <h1 className="main-title">Tic-Tac-Toe</h1>
       <h2>Choose a Player to Start </h2>
       <div className="container col">
         <button className="playerX" onClick={() => handlePlayerSelection("X")}>

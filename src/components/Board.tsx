@@ -21,10 +21,10 @@ const Board: React.FC<BoardProps> = ({
 }) => {
   const handleClick = React.useCallback(
     (i: number, currentPosition: [number, number]) => {
-      const result = calculateWinner(squares); // Ensure that calculateWinner is imported from utils
-      if (result || squares[i]) return; // If there's a winner or square is already filled, do nothing
+      const result = calculateWinner(squares);
+      if (result || squares[i]) return;
       const nextSquares = squares.slice();
-      nextSquares[i] = currentPlayer; // Place X or O
+      nextSquares[i] = currentPlayer;
       handlePlay(nextSquares, currentPosition);
     },
     [squares, currentPlayer, handlePlay]
@@ -44,9 +44,7 @@ const Board: React.FC<BoardProps> = ({
               <Square
                 key={index}
                 value={squares[index]}
-                onSquareClick={
-                  () => handleClick(index, [row + 1, col + 1]) // Adjusting 0-index to 1-indexed position
-                }
+                onSquareClick={() => handleClick(index, [row + 1, col + 1])}
                 isWinning={isWinning}
                 isLast={col === 2 ? "last-col" : ""}
               />

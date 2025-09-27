@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { Player } from "./types";
+import Header from "./components/Header";
 import Game from "./components/Game";
 import Homescreen from "./components/HomeScreen";
-import { Player } from "./types";
 
 function App() {
   const [hasStarted, setHasStarted] = useState<boolean>(false);
@@ -17,24 +18,25 @@ function App() {
     setHistoryVisible((prev) => !prev);
   };
 
-  if (!hasStarted) {
-    return (
-      <Homescreen
-        startGame={startGame}
-        handleHistoryVisibility={handleHistoryVisibility}
-      />
-    );
-  }
-
   return (
-    <Game
-      currentPlayer={currentPlayer}
-      setCurrentPlayer={setCurrentPlayer}
-      setHasStarted={setHasStarted}
-      historyVisible={historyVisible}
-      setHistoryVisible={setHistoryVisible}
-      handleHistoryVisibility={handleHistoryVisibility}
-    />
+    <div className="main container">
+      <Header />
+      {!hasStarted ? (
+        <Homescreen
+          startGame={startGame}
+          handleHistoryVisibility={handleHistoryVisibility}
+        />
+      ) : (
+        <Game
+          currentPlayer={currentPlayer}
+          setCurrentPlayer={setCurrentPlayer}
+          setHasStarted={setHasStarted}
+          historyVisible={historyVisible}
+          setHistoryVisible={setHistoryVisible}
+          handleHistoryVisibility={handleHistoryVisibility}
+        />
+      )}
+    </div>
   );
 }
 

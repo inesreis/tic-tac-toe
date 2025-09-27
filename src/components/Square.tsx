@@ -15,9 +15,9 @@ const Square: React.FC<SquareProps> = ({
 }) => {
   return (
     <button
-      className={`${isLast} ${
-        value === "X" ? "playerX" : "playerO"
-      } square container ${isWinning ? "winning" : ""}`}
+      className={`${isLast} player${value} square container ${
+        isWinning ? "winning" : ""
+      }`}
       onClick={onSquareClick}
     >
       <span>{value}</span>
