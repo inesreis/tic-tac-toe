@@ -1,0 +1,61 @@
+import React from "react";
+import Square from "./Square";
+import { calculateWinner } from "./utils";
+import { Player } from "../types";
+
+type BoardProps = {
+  currentPlayer: Player;
+  squares: Player[];
+  handlePlay: (
+    nextSquares: Player[],
+    currentPosition: [number, number]
+  ) => void;
+  winningLine: number[] | undefined;
+};
+
+const Board: React.FC<BoardProps> = ({
+  currentPlayer,
+  squares,
+  handlePlay,
+  winningLine,
+}) => {
+  const handleClick = React.useCallback(
+    (i: number, currentPosition: [number, number]) => {
+      const result = calculateWinner(squares); // Ensure that calculateWinner is imported from utils
+      if (result || squares[i]) return; // If there's a winner or square is already filled, do nothing
+      const nextSquares = squares.slice();
+      nextSquares[i] = currentPlayer; // Place X or O
+      handlePlay(nextSquares, currentPosition);
+    },
+    [squares, currentPlayer, handlePlay]
+  );
+
+  return (
+    <div className="board container">
+      {[0, 1, 2].map((row) => (
+        <div
+          className={`board-row container col ${row === 2 ? "last-row" : ""}`}
+          key={row}
+        >
+          {[0, 1, 2].map((col) => {
+            const index = row * 3 + col;
+            const isWinning = winningLine?.includes(index);
+            return (
+              <Square
+                key={index}
+                value={squares[index]}
+                onSquareClick={
+                  () => handleClick(index, [row + 1, col + 1]) // Adjusting 0-index to 1-indexed position
+                }
+                isWinning={isWinning}
+                isLast={col === 2 ? "last-col" : ""}
+              />
+            );
+          })}
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default Board;
