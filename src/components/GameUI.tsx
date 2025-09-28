@@ -14,7 +14,7 @@ const GameUI: React.FC<GameUIProps> = ({
 }) => {
   const { theme, toggleTheme } = useTheme();
   return (
-    <div className="col container">
+    <div className="col container ui">
       <button className="button icon" onClick={toggleTheme}>
         {theme === "light" ? <Moon /> : <Sun />}
       </button>

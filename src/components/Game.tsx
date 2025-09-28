@@ -5,6 +5,7 @@ import Board from "./Board";
 import GameUI from "./GameUI";
 import Status from "./Status";
 import History from "./History";
+import { useDeviceType } from "../context/DeviceContext";
 
 type GameProps = {
   currentPlayer: Player;
@@ -23,6 +24,8 @@ const Game: React.FC<GameProps> = ({
   setHistoryVisible,
   handleHistoryVisibility,
 }) => {
+  const device = useDeviceType();
+
   const [currentMove, setCurrentMove] = useState<number>(0);
   const [history, setHistory] = useState<HistoryStep[]>([
     { squares: Array(9).fill(null), currentPosition: null, player: null },
@@ -82,25 +85,33 @@ const Game: React.FC<GameProps> = ({
   };
 
   return (
-    <div className="container">
-      <div className="game container">
-        <Status result={result} currentPlayer={currentPlayer} />
-        <div className="board-sec container col">
-          <Board
-            currentPlayer={currentPlayer}
-            squares={currentSquares}
-            handlePlay={handlePlay}
-            winningLine={winningLine}
-          />
-          {historyVisible && (
-            <History history={history} onUndoClick={handleUndo} />
-          )}
-        </div>
-        <GameUI
-          currentMove={currentMove}
-          handleHistoryVisibility={handleHistoryVisibility}
+    <div className="game container">
+      <Status result={result} currentPlayer={currentPlayer} />
+      <div
+        className={`board-sec container${device === "mobile" ? "" : " col"}`}
+      >
+        <Board
+          currentPlayer={currentPlayer}
+          squares={currentSquares}
+          handlePlay={handlePlay}
+          winningLine={winningLine}
         />
+        {historyVisible && (
+          <>
+            <div
+              onClick={() => {
+                setHistoryVisible(false);
+              }}
+              className="container fixed"
+            ></div>
+            <History history={history} onUndoClick={handleUndo} />
+          </>
+        )}
       </div>
+      <GameUI
+        currentMove={currentMove}
+        handleHistoryVisibility={handleHistoryVisibility}
+      />
     </div>
   );
 };
