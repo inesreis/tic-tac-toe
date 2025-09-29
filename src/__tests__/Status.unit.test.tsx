@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import Status from "../../components/Status";
+import Status from "../components/Status";
 
 describe("Status component", () => {
   it('displays "Now playing" with current player', () => {
@@ -13,9 +13,8 @@ describe("Status component", () => {
 
   it('displays "Winner" and winning player', () => {
     const result = {
-      winner: "O",
+      winner: "O" as const,
       line: [0, 1, 2],
-      draw: false,
     };
 
     render(<Status result={result} currentPlayer="X" />);
@@ -29,8 +28,7 @@ describe("Status component", () => {
   it('displays "It\'s a draw!" when draw is true', () => {
     const result = {
       winner: null,
-      line: [],
-      draw: true,
+      draw: true as const,
     };
 
     render(<Status result={result} currentPlayer="O" />);

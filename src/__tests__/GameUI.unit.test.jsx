@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
-import GameUI from "../../../components/GameUI";
-import { ThemeContext } from "../../../context/ThemeContext";
+import GameUI from "../components/GameUI";
+import { ThemeContext } from "../context/ThemeContext";
 
 const renderWithTheme = (
   ui,

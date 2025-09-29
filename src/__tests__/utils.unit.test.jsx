@@ -1,4 +1,4 @@
-import { calculateWinner } from "../../components/utils";
+import { calculateWinner } from "../components/utils";
 
 describe("calculateWinner", () => {
   it("detects a winner in a row", () => {

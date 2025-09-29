@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import { ThemeProvider } from "../../../context/ThemeContext";
-import GameUI from "../../../components/GameUI";
+import { ThemeProvider } from "../context/ThemeContext";
+import GameUI from "../components/GameUI";
 
 describe("GameUI integration with ThemeProvider", () => {
   beforeEach(() => {

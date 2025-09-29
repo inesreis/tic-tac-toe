@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import History from "../../components/History";
+import History from "../components/History";
 
 describe("History component", () => {
   const mockOnUndoClick = vi.fn();

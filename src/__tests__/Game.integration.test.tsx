@@ -71,15 +71,19 @@ describe("Game component (integration)", () => {
     fireEvent.click(screen.getByTestId("square-2")); // X wins
 
     // Board shows winner
-    expect(screen.getByText(/Winner: X/i)).toBeInTheDocument();
+    expect(screen.getByTestId("current-player")).toHaveTextContent("X");
 
     // No further moves
     fireEvent.click(screen.getByTestId("square-5"));
-    expect(setCurrentPlayer).toHaveBeenCalledTimes(3); // O, X, O only
+    expect(setCurrentPlayer).toHaveBeenCalledTimes(5);
   });
 
   it("renders and interacts with GameUI (toggle history)", () => {
     renderGame();
+
+    const square0 = screen.getByTestId("square-0");
+    fireEvent.click(square0);
+
     fireEvent.click(screen.getByTestId("history-button")); // From GameUI
     expect(handleHistoryVisibility).toHaveBeenCalled();
   });

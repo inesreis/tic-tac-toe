@@ -30,6 +30,7 @@ const History: React.FC<HistoryProps> = ({ history, onUndoClick }) => {
           onClick={onUndoClick}
           className="button icon"
           aria-label="Undo button"
+          data-testid="undo"
         >
           <Undo />
         </button>

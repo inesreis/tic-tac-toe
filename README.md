@@ -90,9 +90,9 @@ npm run test
 
 - Icons: [Lucide](https://lucide.dev/)
 
-- Fonts: Google Fonts
-  -- [https://github.com/googlefonts/dynapuff](https://github.com/googlefonts/dynapuff)
-  -- [https://github.com/andrew-paglinawan/QuicksandFamily](https://github.com/andrew-paglinawan/QuicksandFamily)
+- Fonts: [Google Fonts](https://fonts.google.com/)
+  - [https://github.com/googlefonts/dynapuff](https://github.com/googlefonts/dynapuff)
+  - [https://github.com/andrew-paglinawan/QuicksandFamily](https://github.com/andrew-paglinawan/QuicksandFamily)
 
 ## 🙏 Acknowledgements
 
