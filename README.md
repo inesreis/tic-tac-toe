@@ -31,7 +31,7 @@ Original Sandbox (IED):
 | **Language**  | [TypeScript](https://www.typescriptlang.org/)                                                                    |
 | **Bundler**   | [Vite](https://vite.dev/guide/)                                                                                  |
 | **Testing**   | [Vitest](https://vitest.dev/) + [Testing Library](https://testing-library.com/docs/react-testing-library/intro/) |
-|  |
+|               |
 
 ## ✅ Features
 
@@ -74,3 +74,5 @@ Original Sandbox (IED):
 - [Vite Documentation](https://vite.dev/guide/)
 - [Vitest Documentation](https://vitest.dev/api/)
 - [Testing Library Documentation](https://testing-library.com/docs/react-testing-library/intro/)
+
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE)
