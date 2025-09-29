@@ -1,7 +1,7 @@
 {
   "name": "tic-tac-toe",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "homepage": "https://inesreis.github.io/tic-tac-toe/",
   "scripts": {
@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "test": "vitest",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "gh-pages": "^6.3.0",
