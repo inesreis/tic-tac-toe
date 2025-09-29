@@ -1,8 +1,8 @@
 const Header: React.FC = () => {
   return (
-    <div className="header container">
+    <header className="header container" data-testid="header">
       <h1 className="main-title">Tic-Tac-Toe</h1>
-    </div>
+    </header>
   );
 };
 

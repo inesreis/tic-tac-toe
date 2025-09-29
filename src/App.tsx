@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Player } from "./types";
 import Header from "./components/Header";
 import Game from "./components/Game";
-import Homescreen from "./components/HomeScreen";
+import Homescreen from "./components/Homescreen";
 
 function App() {
   const [hasStarted, setHasStarted] = useState<boolean>(false);

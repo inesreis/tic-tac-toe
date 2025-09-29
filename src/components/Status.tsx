@@ -21,6 +21,7 @@ const Status: React.FC<StatusProps> = ({ result, currentPlayer }) => {
             ? "playerX"
             : "playerO"
         }
+        data-testid="current-player"
       >
         {result?.winner ? result.winner : currentPlayer}
       </span>

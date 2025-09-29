@@ -14,13 +14,23 @@ const Homescreen: React.FC<HomescreenProps> = ({
     startGame(player);
   };
   return (
-    <div className="start container">
+    <div className="start container" data-testid="homescreen">
       <h2>Choose a Player to Start </h2>
       <div className="container col">
-        <button className="playerX" onClick={() => handlePlayerSelection("X")}>
+        <button
+          className="playerX"
+          onClick={() => handlePlayerSelection("X")}
+          data-testid="start-x"
+          area-label="X"
+        >
           X
         </button>
-        <button className="playerO" onClick={() => handlePlayerSelection("O")}>
+        <button
+          className="playerO"
+          onClick={() => handlePlayerSelection("O")}
+          data-testid="start-o"
+          area-label="O"
+        >
           O
         </button>
       </div>

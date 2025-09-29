@@ -31,7 +31,7 @@ const Board: React.FC<BoardProps> = ({
   );
 
   return (
-    <div className="board container">
+    <div className="board container" data-testid="board">
       {[0, 1, 2].map((row) => (
         <div
           className={`board-row container col ${row === 2 ? "last-row" : ""}`}
@@ -43,6 +43,7 @@ const Board: React.FC<BoardProps> = ({
             return (
               <Square
                 key={index}
+                index={index}
                 value={squares[index]}
                 onSquareClick={() => handleClick(index, [row + 1, col + 1])}
                 isWinning={isWinning}

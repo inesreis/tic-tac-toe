@@ -1,29 +1,31 @@
-import { useTheme } from "../context/ThemeContext";
-import { Sun, Moon, History } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
+import { History } from "lucide-react";
 
 type GameUIProps = {
   currentMove: number;
-
   handleHistoryVisibility: () => void;
 };
 
 const GameUI: React.FC<GameUIProps> = ({
   currentMove,
-
   handleHistoryVisibility,
 }) => {
-  const { theme, toggleTheme } = useTheme();
   return (
     <div className="col container ui">
-      <button className="button icon" onClick={toggleTheme}>
-        {theme === "light" ? <Moon /> : <Sun />}
-      </button>
+      <ThemeToggle />
+
       {currentMove !== 0 && (
-        <button className="button icon" onClick={handleHistoryVisibility}>
-          <History />
+        <button
+          aria-label="Show history"
+          data-testid="history-button"
+          className="button icon"
+          onClick={handleHistoryVisibility}
+        >
+          <History data-testid="history-icon" />
         </button>
       )}
     </div>
   );
 };
+
 export default GameUI;

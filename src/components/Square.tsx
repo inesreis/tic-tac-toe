@@ -1,4 +1,5 @@
 type SquareProps = {
+  index: number;
   value: string | null;
   onSquareClick: () => void;
   isWinning: boolean | undefined;
@@ -6,6 +7,7 @@ type SquareProps = {
 };
 
 const Square: React.FC<SquareProps> = ({
+  index,
   value,
   onSquareClick,
   isWinning,
@@ -13,6 +15,7 @@ const Square: React.FC<SquareProps> = ({
 }) => {
   return (
     <button
+      data-testid={`square-${index}`}
       className={`${isLast} player${value} square container ${
         isWinning ? "winning" : ""
       }`}

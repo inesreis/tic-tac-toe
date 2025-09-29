@@ -26,7 +26,11 @@ const History: React.FC<HistoryProps> = ({ history, onUndoClick }) => {
     <div className="game-info container">
       <div className="container col">
         <h2 className="main-title">History</h2>
-        <button onClick={onUndoClick} className="button icon">
+        <button
+          onClick={onUndoClick}
+          className="button icon"
+          aria-label="Undo button"
+        >
           <Undo />
         </button>
       </div>

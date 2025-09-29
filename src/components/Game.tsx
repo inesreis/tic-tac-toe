@@ -70,9 +70,10 @@ const Game: React.FC<GameProps> = ({
     }
 
     if (currentMove > 0) {
-      setHistory(history.slice(0, -1));
+      const newHistory = history.slice(0, currentMove); // cut off the last move
+      setHistory(newHistory);
       setCurrentMove(currentMove - 1);
-      setCurrentPlayer(currentPlayer == "X" ? "O" : "X");
+      setCurrentPlayer(currentPlayer === "X" ? "O" : "X");
     }
   };
 
@@ -85,7 +86,7 @@ const Game: React.FC<GameProps> = ({
   };
 
   return (
-    <div className="game container">
+    <div className="game container" data-testid="game">
       <Status result={result} currentPlayer={currentPlayer} />
       <div
         className={`board-sec container${device === "mobile" ? "" : " col"}`}
