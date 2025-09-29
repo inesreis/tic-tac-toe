@@ -1,5 +1,3 @@
-import React from "react";
-
 type SquareProps = {
   value: string | null;
   onSquareClick: () => void;

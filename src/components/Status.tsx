@@ -17,7 +17,7 @@ const Status: React.FC<StatusProps> = ({ result, currentPlayer }) => {
       <h2 className={result?.winner ? "button" : ""}>{status}</h2>
       <span
         className={
-          result?.winner === "X" || currentPlayer === "X"
+          result?.winner === "X" || (currentPlayer === "X" && !result?.winner)
             ? "playerX"
             : "playerO"
         }

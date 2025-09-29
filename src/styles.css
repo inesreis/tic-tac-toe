@@ -130,14 +130,14 @@ p {
   align-items: stretch;
 }
 
-.container.fixed {
+.fixed {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   width: 100% !important;
-  height: 100%;
+  height: 100% !important;
   z-index: 0;
 }
 
@@ -223,13 +223,13 @@ p {
   border-radius: 20px;
   width: 100%;
   aspect-ratio: 1 / 1;
+  z-index: 1;
 }
 
 .square {
   background: transparent;
   border: none;
   border-right: 5px solid var(--main-text-light);
-  display: flex;
   align-items: center;
   justify-content: center;
   width: var(--square-size-big);
@@ -238,6 +238,7 @@ p {
   font-size: var(--font-size-small);
   font-weight: bold;
   transition: transform 0.3s ease;
+  height: 100%;
 }
 
 .square:active span {
@@ -287,7 +288,8 @@ p {
   padding: var(--padding);
   border-radius: 20px;
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  justify-content: flex-start;
 
   .col {
     align-items: baseline;
@@ -302,6 +304,7 @@ p {
     flex: 1;
     justify-content: flex-start;
     width: 100%;
+    overflow: auto;
   }
 
   li {
@@ -330,18 +333,30 @@ p {
     transform: scale(1) rotate(-10deg);
   }
 }
-
+.tablet .board-sec > div {
+  width: calc(50% - (var(--padding) * 2));
+  height: auto;
+}
 .mobile {
   .board-sec {
     position: relative;
 
     .game-info {
       position: absolute;
+      h2 {
+        font-size: var(--font-size-medium);
+        color: var(--main-text-light);
+      }
     }
   }
 
   .board-sec > div {
     width: calc(80% - var(--padding));
     height: auto;
+  }
+  @media screen and (max-width: 350px) {
+    .square[class*="player"] span {
+      font-size: 4em;
+    }
   }
 }
