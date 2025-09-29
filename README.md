@@ -2,7 +2,18 @@
 
 This is a feature-rich and scalable Tic-Tac-Toe game built in **React** with **TypeScript**, modern **testing frameworks**, and enhanced UI/UX. It started as a simple tutorial project and evolved as I learned new React concepts, testing practices, and development workflows.
 
----
+## 🛠️ Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Run tests
+npm run test
+```
 
 ## 📚 Based On
 
@@ -12,22 +23,15 @@ Original Tutorial:
 Original Sandbox (IED):  
 🔗 [CodeSandbox Fork](https://codesandbox.io/p/devbox/react-dev-forked-mczzms?file=%2Fsrc%2FApp.js%3A48%2C21&workspaceId=ws_BfhuVkuATKwkYTD8u6m2Zz)
 
----
-
 ## 🚀 Tech Stack
 
-| Category          | Tool / Library                                                                                                   |
-| ----------------- | ---------------------------------------------------------------------------------------------------------------- |
-| **Framework**     | [React](https://react.dev)                                                                                       |
-| **Language**      | [TypeScript](https://www.typescriptlang.org/)                                                                    |
-| **Bundler**       | [Vite](https://vite.dev/guide/)                                                                                  |
-| **Testing**       | [Vitest](https://vitest.dev/) + [Testing Library](https://testing-library.com/docs/react-testing-library/intro/) |
-| **Icons**         | [Lucide React](https://lucide.dev/)                                                                              |
-| **Fonts**         | [Google Fonts](https://fonts.google.com/selection/embed)                                                         |
-| **Color Palette** | [Coolors Palette](https://coolors.co/58a88d-2b2d42-9684a1-fffbfc-e5b181)                                         |
-| **Editor Theme**  | [Xcode (customized palette)]                                                                                     |
-
----
+| Category      | Tool / Library                                                                                                   |
+| ------------- | ---------------------------------------------------------------------------------------------------------------- |
+| **Framework** | [React](https://react.dev)                                                                                       |
+| **Language**  | [TypeScript](https://www.typescriptlang.org/)                                                                    |
+| **Bundler**   | [Vite](https://vite.dev/guide/)                                                                                  |
+| **Testing**   | [Vitest](https://vitest.dev/) + [Testing Library](https://testing-library.com/docs/react-testing-library/intro/) |
+|  |
 
 ## ✅ Features
 
@@ -42,36 +46,6 @@ Original Sandbox (IED):
 - Component-level **unit tests**
 - App-level **integration tests**
 - Thorough test coverage using Vitest
-
----
-
-## 🧪 Testing Strategy
-
-Testing is structured into:
-
-- **Unit Tests**: For isolated components (`Game`, `Square`, `Board`, etc.)
-- **Integration Tests**: For full app behavior (`App.test.tsx`)
-- **Mocking**: Used where appropriate to isolate logic from UI
-
-Frameworks used:
-
-- 🔹 [Vitest](https://vitest.dev/api/) — modern Vite-native test runner
-- 🔹 [Testing Library](https://testing-library.com/) — user-focused test utilities
-
----
-
-## 🛠️ Getting Started
-
-```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-
-# Run tests
-npm run test
-```
 
 ## 🧑‍💻 Development Process
 
@@ -89,7 +63,7 @@ npm run test
 ## 🎨 Design
 
 - Icons: [Lucide](https://lucide.dev/)
-
+- Color Pallete: [Coolors](https://coolors.co/b9f5d8-2b2d42-868cb2-fffbfc-bb7e5d)
 - Fonts: [Google Fonts](https://fonts.google.com/)
   - [https://github.com/googlefonts/dynapuff](https://github.com/googlefonts/dynapuff)
   - [https://github.com/andrew-paglinawan/QuicksandFamily](https://github.com/andrew-paglinawan/QuicksandFamily)
